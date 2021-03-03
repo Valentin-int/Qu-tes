@@ -21,3 +21,42 @@ wilder@wilder-HP-EliteBook-850-G3:~/quests/shell/planets$ find
 ./real/terrestrial/mercury.jpeg
 ./real/terrestrial/uranus.jpeg
 wilder@wilder-HP-EliteBook-850-G3:~/quests/shell/planets$ 
+
+  
+  commandes
+  651  cd planets/
+  652  mkdir real fictional inhabited
+  653  cd real
+  654  mkdir terrestrial gas-giants dwarf-planets
+  655  cd ..
+  656  cd real/
+  657  cd ..
+  658  mv mercury.jpeg earth.jpeg pluto.jpeg jupiter.jpeg venus.jpeg mars.jpeg uranus.jpeg neptune.jpeg saturn.jpeg real/
+  659  ls
+  660  ls -l
+  661  ls bin
+  662  ls -bin
+  663  cd real/
+  664  ls
+  665  cd ..
+  666  mv cybertron.jpeg coruscant.jpeg arrakis.jpeg fictional/
+  667  find
+  668  cd fictional/
+  669  cp .
+  670  cp . ..inhabited
+  671  cp arrakis.jpeg coruscant.jpeg cybertron.jpeg inhabited/
+  672  cd ..
+  673  cp -R fictional/cybertron.jpeg fictional/arrakis.jpeg fictional/coruscant.jpeg inhabited/
+  674  find
+  675  cp -R real/earth.jpeg inhabited/
+  676  cd real/
+  677  mv pluto.jpeg dwarf-planets/
+  678  mv neptune.jpeg mars.jpeg jupiter.jpeg earth.jpeg venus.jpeg mercury.jpeg uranus.jpeg terrestrial/
+  679  find
+  680  mv saturn.jpeg gas-giants/
+  681  find
+  682  rm -rf dwarf-planets/
+  683  cd ..
+  684  find
+  685  history
+

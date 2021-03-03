@@ -1,83 +1,4 @@
-180  find
-  181  mkdir real fictional inhabited
-  182  find
-  183  mkdir planets/reals terrestrial gas-giants dwarf-planets
-  184  find
-  185  ls
-  186  mv ca* dwarf-planets gas-giant terrestrial real/
-  187  find
-  188  rm planets.zip
-  189  cd planets
-  190  find
-  191  cd real
-  192  touch real
-  193  touch fictional
-  194  touch inhabited
-  195  find
-  196  rm reals
-  197  rm -r relas
-  198  find
-  199  ls
-  200  rm fictional inhabited
-  201  mkdir fictional inhabited
-  202  find
-  203  ls
-  204  cd real
-  205  mkdir terrestrial gas-giant dwarf planets
-  206  ls
-  207  rm dwarf planets
-  208  rm -rf dwarf planets
-  209  mkdir dwarf-planets
-  210  ls
-  211  cd ..
-  212  ls
-  213  mv ca* earth.jpeg jupiter.jpeg mars.jpeg mercury.jpeg neptune.jpeg saturn.jpeg pluto.jpeg uranus.jpeg venus.jpeg real
-  214  mv ca* earth.jpeg jupiter.jpeg mars.jpeg mercury.jpeg neptune.jpeg saturn.jpeg pluto.jpeg uranus.jpeg venus.jpeg real/
-  215  find
-  216  mv ca* cybertron.jpeg arrakis.jpeg coruscant.jpeg fictional/
-  217  find
-  218  cp a* coruscant.jpeg cybertron.jpeg earth.jpeg dwarf-planets
-  219  ls
-  220  find
-  221  cp a* arrakis.jpeg cybertron.jpeg coruscant.jpeg eath.jpeg inhabited/
-  222  find
-  223  cp real
-  224  cd real
-  225  cp earth.jpeg
-  226  c..
-  227  cd ..
-  228  cd fictional/
-  229  cp arrakis.jpeg coruscant.jpeg cybertron.jpeg inhabited
-  230  find
-  231  cd ..
-  232  find
-  233  pwd
-  234  ls
-  235  rm inhabited
-  236  rm -rf inhabited
-  237  mkdir inhabited
-  238  cd fictional/
-  239  mv cybertron.jpeg  coruscant.jpeg arrakis.jpeg inhabited
-  240  cd ..
-  241  cp fictional inhabited/
-  242  cp -R fictional inhabited/
-  243  find
-  244  cp real/earth.jpeg inhabited/
-  245  find
-  246  cd inhabited/
-  247  rm -rf fictional/
-  248  find
-  249  cd ..
-  250  cp fictional/arrakis.jpeg fictional/coruscant.jpeg fictional/cybertron.jpeg inhabited/
-  251  find
-  252  cd real
-  253  rm -rf pluto.jpeg 
-  254  find
-  255  cd ..
-  256  ls
-  257  find
-  
-  wilder@wilder-HP-EliteBook-850-G3:~/quests/shell/planets$ find
+wilder@wilder-HP-EliteBook-850-G3:~/quests/shell/planets$ find
 .
 ./inhabited
 ./inhabited/earth.jpeg
@@ -89,15 +10,14 @@
 ./fictional/coruscant.jpeg
 ./fictional/cybertron.jpeg
 ./real
-./real/neptune.jpeg
-./real/mars.jpeg
-./real/jupiter.jpeg
-./real/earth.jpeg
-./real/gas-giant
-./real/saturn.jpeg
+./real/gas-giants
+./real/gas-giants/saturn.jpeg
 ./real/terrestrial
-./real/venus.jpeg
-./real/mercury.jpeg
-./real/uranus.jpeg
-./real/dwarf-planets
-
+./real/terrestrial/neptune.jpeg
+./real/terrestrial/mars.jpeg
+./real/terrestrial/jupiter.jpeg
+./real/terrestrial/earth.jpeg
+./real/terrestrial/venus.jpeg
+./real/terrestrial/mercury.jpeg
+./real/terrestrial/uranus.jpeg
+wilder@wilder-HP-EliteBook-850-G3:~/quests/shell/planets$ 

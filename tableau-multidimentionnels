@@ -1,0 +1,14 @@
+<?php
+$movies = [
+    "Indiana Jones et les Aventuriers de l'arche perdue" => ['Harrison Ford, ', 'Karen Allen, ', 'Paul Freeman.'],
+    "Indiana Jones et le Temple maudit" => ['Harrison Ford, ', 'Kate Capshaw, ', 'Ke Huy Quan.'],
+    "Indiana Jones et la Dernière Croisade" => ['Harrison Ford, ', 'Sean Connery, ', 'Alison Doody.']
+];
+
+foreach ($movies as $keys => $movies) {
+    echo "In the movies " . $keys . ", " . "they principal actor is: ";
+    for ($i = 0; $i < 3; $i++) {
+        echo $movies[$i] ;
+    }
+    echo "\n";
+}

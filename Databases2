@@ -34,11 +34,11 @@ mysql> SELECT firstname, lastname FROM wizard
 2 rows in set (0.00 sec)
 
 
-mysql> SELECT 'albus', 'dumbledore', MIN(birthday) FROM wizard;
-+-------+------------+---------------+
-| albus | dumbledore | MIN(birthday) |
-+-------+------------+---------------+
-| albus | dumbledore | 1881-07-01    |
-+-------+------------+---------------+
+mysql> SELECT firstname, lastname, birthday FROM wizard ORDER BY birthday ASC LIMIT 1;
++-----------+------------+------------+
+| firstname | lastname   | birthday   |
++-----------+------------+------------+
+| albus     | dumbledore | 1881-07-01 |
++-----------+------------+------------+
 1 row in set (0.00 sec)
 

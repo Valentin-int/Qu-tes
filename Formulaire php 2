@@ -1,0 +1,132 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // foreach($_POST as $key => $value){
+    //   $date[$key] = trim($value);
+    // }
+
+    $data = array_map('trim', $_POST);
+
+    $errors = [];
+    $maxLenght = 255;
+    $select = ['contact','help'];
+
+    if (empty($data['user_name'])) {
+      $errors[] = 'Le nom est obligatoire';
+    }
+
+    if(strlen($data['user_name']) > $maxLenght) {
+      $errors[] = 'Le nom doit faire moin de' . $maxLenght . ' caractère';
+    }
+
+    if (empty($data['user_fistname'])) {
+      $errors[] = 'Le prénom est obligatoire';
+    }
+
+    if(strlen($data['user_firstname']) > $maxLenght) {
+      $errors[] = 'Le prénom doit faire moin de' . $maxLenght . ' caractère';
+    }
+
+    if (empty($data['user_email'])) {
+      $errors[] = 'L\'email est obligatoire';
+     }
+  
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errors[] = 'Mauvais format d\'email';
+    }
+
+    if (empty($data['user_telephone'])) {
+      $errors[] = 'Le téléphone est obligatoire';
+     }
+  
+    if(strlen($data['user_telephone']) > $maxLenght) {
+      $errors[] = 'Le téléphone doit faire moin de' . $maxLenght . ' caractère';
+    }
+
+    if(!in_array($data['title'], $select)){
+      $errors[] = 'La valeur du sujet n\'est pas bonne';
+    }
+
+    if (empty($data['user_message'])) {
+      $errors[] = 'Un message est obligatoire';
+     }
+
+    if(empty($errors)) {
+      echo 'Tout a bien été remplis';
+      header('Location: index.php');
+    }
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form  action="index.php"  method="POST">
+<div>
+
+  <label  for="nom">Nom :</label>
+
+  <input  type="text"  id="user_name"  name="user_name" value = "<?php $data['user_name'] ?? ''?>" required placeholder="John">
+
+</div>
+
+<div>
+
+  <label  for="prenom">Prénom :</label>
+
+  <input  type="text"  id="user_firstname"  name="user_firstname" value = "<?php $data['user_firstname'] ?? ''?>" required placeholder="Doe">
+
+</div>
+
+
+<div>
+
+  <label  for="courriel">E-mail :</label>
+
+    <input  type="email"  id="user_email"  name="user_email" value = "<?php $data['user_email'] ?? ''?>" required placeholder="John@doe.fr">
+
+</div>
+
+<div>
+
+  <label  for="telephone">Téléphone :</label>
+
+  <input  type="text"  id="user_telephone"  value = "<?php $data['user_telephone'] ?? ''?>" name="user_telephone" required >
+
+</div>
+
+<div>
+  <label for = 'sujet'>Choisir le sujet :</label>
+
+  <select id = 'sujet' name ='sujet' required>
+      <option value = 'contact'>Contact</option>
+      <option value = 'help'>Help</option>
+</select>
+
+</div>
+
+<div>
+
+  <label  for="message">Message :</label>
+
+  <textarea  id="user_message"  name="user_message" value = "<?php $data['user_message'] ?? ''?>" required placeholder="Lorem ipsum"></textarea>
+
+</div>
+
+<div  class="button">
+
+  <button  type="submit">Envoyer votre message</button>
+
+</div>
+
+</form> 
+</body>
+</html>

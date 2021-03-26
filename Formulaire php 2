@@ -1,3 +1,5 @@
+Page index.php
+
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -70,6 +72,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <form  action="index.php"  method="POST">
+ <?php if (!empty($errors)) : ?>
+       <ul class = 'errors'>
+         <?php foreach($errors as $error) : ?>
+            <li><?php echo $error ?></li>
+               <?php endforeach; ?>
+       </ul>
+          <?php endif; ?>
 <div>
 
   <label  for="nom">Nom :</label>

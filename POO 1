@@ -1,0 +1,138 @@
+index.php
+
+<?php
+
+require_once 'Bicycle.php';
+$bike = new Bicycle();
+$bike->color ='blue';
+$bike->currentSpeed = 0;
+echo $bike->forward();
+echo '<br> Vitesse du vélo : ' . $bike->currentSpeed . ' km/h' . '<br>';
+echo $bike->brake();
+echo '<br> Vitesse du vélo : ' . $bike->currentSpeed . ' km/h' . '<br>';
+echo $bike->brake();
+var_dump($bike);
+
+require_once 'Car.php';
+$car = new Car( 'Blue', 5, 'Essence');
+echo $car->start();
+echo '<br> Démarrage de la voiture' . $car->getCurrentSpeed = 0 . ' km/h' . '<br>';
+echo $car->forward();
+echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed = 90 . ' km/h' . '<br>';
+echo $car->brake();
+echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed = 0 . ' km/h' . '<br>';
+var_dump ($car);
+
+
+
+Car.php
+
+<?php
+class Car
+{
+    private int $nbWheels;
+
+    private int $currentSpeed;
+
+    private string $color;
+
+    private int $nbSeats;
+
+    private string $energy;
+
+    private int $energyLevel;
+
+    public function __construct(string $color, int $nbSeats, string $energy)
+    {
+        $this->color = $color;
+        $this->nbSeats = $nbSeats;
+        $this->energy = $energy;
+    }
+
+    public function start(): string
+    {
+        $this->currentSpeed = 0;
+        return "Start";
+    }
+
+    public function forward(): string
+    {
+        $this->currentspeed = 90;
+
+        return "Go ! ";
+    }
+
+    public function brake(): string
+    {
+        $sentence = "";
+        while ($this->currentSpeed > 0){
+            $this->currentSpeed--;
+            $sentence .= "Brake !!!";
+        }
+        $sentence .= "I'm stopped !";
+        return $sentence;
+    }   
+
+    public function getNbWheels()
+    {
+        return $this->nbWheels;
+    }
+
+    public function getCurrentSpeed()
+    {
+        return $this->currentSpeed;
+    }
+
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    public function getEnergy()
+    {
+        return $this->energy;
+    }
+
+    public function getEnergyLevel()
+    {
+        return $this->energyLevel;
+    }
+}
+
+
+
+
+
+
+
+Bicycle.php
+
+<?php
+class Bicycle
+{
+    public string $color;
+
+    public int $currentSpeed;
+    
+    public int $nbSeats = 1;
+
+    public int $nbWhells = 2;
+
+    public function forward(): string
+    {
+        $this->currentSpeed = 15;
+
+        return "Go !";
+    }
+
+    public function brake(): string
+    {
+        $sentence = "";
+        while ($this->currentSpeed > 0){
+            $this->currentSpeed--;
+            $sentence .= "Brake !!!";
+        }
+        $sentence .= "I'm stopped !";
+        return $sentence;
+    }
+}
